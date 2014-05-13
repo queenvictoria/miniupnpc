@@ -19,9 +19,14 @@ if not os.path.exists(os.path.join(prj_root, "libminiupnpc.a")):
 
 sysconfig.get_config_vars()["OPT"] = ''
 sysconfig.get_config_vars()["CFLAGS"] = ''
-setup(name="miniupnpc", version="1.7",
+setup(name="miniupnpc",
+      version=open('VERSION').read(),
+      author='Thomas Bernard',
+      license=open('LICENSE').read(),
+      url='https://github.com/chenhouwu/miniupnpc',
+      description='miniupnp client',
+      long_description=open('README').read(),
       ext_modules=[
-	         Extension(name="miniupnpc", sources=["miniupnpcmodule.c"],
-			           extra_objects=["libminiupnpc.a"])
-			 ])
-
+          Extension(name="miniupnpc", sources=["miniupnpcmodule.c"],
+                    extra_objects=["libminiupnpc.a"])
+      ])
