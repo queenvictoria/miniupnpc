@@ -24,10 +24,10 @@ setup(name="miniupnpc",
       author='Thomas BERNARD',
       author_email='miniupnp@free.fr',
       license=open('LICENSE').read(),
-      url='http://miniupnp.free.fr/',
+      url='https://github.com/chenhouwu/miniupnpc',
       description='miniUPnP client',
+      long_description=open('README').read(),
       ext_modules=[
          Extension(name="miniupnpc", sources=["miniupnpcmodule.c"],
                    extra_objects=["libminiupnpc.a"])
       ])
-
